@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body{
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: 700;
+            background-color: #08AEEA;
+            background-image: linear-gradient(0deg, #08AEEA 0%, #2AF598 100%);
+            overflow: hidden;
+        }
+        div{
+            height: 450px;
+            width: 350px;
+            box-shadow: 2px 4px 6px black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 50px;
+            font-weight: 400;
+        }
+        h2{
+            color: black;
+        }
+        form{
+            height: 200px;
+            width: 350px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-direction: column;
+        }
+        #fname,#password,#lname,#email{
+            height: 40px;
+            width: 220px;
+            border-radius: 10px;
+            box-shadow: 1px 2px 2px black;
+            font-size: 15px;
+            background-color: whitesmoke;
+        }
+        input{
+            height: 40px;
+        }
+        #signup{
+            height: 30px;
+            width: 100px;
+            border-radius: 20px;
+            box-shadow: 1px 2px 2px black;
+            font-size: 15px;
+            background-color: #11ef8b;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    
+        <div>
+            <h2>Registration Form</h2>
+            <form action="">
+                <label for="fname">First Name</label>
+                <input type="text" id="fname" placeholder="Enter First Name">
+                <br>
+                <label for="lname">Last Name</label>
+                <input type="text" id="lname" placeholder="Enter Last Name">
+                <br>
+                <label for="email">Email Id</label>
+                <input type="email" id="email" placeholder="Enter Email Id">
+                <br>
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Password">
+                <br>
+            </form>
+            <button id="signup">SignUP</button>
+        </div>
+    </section>
+
+    <script>
+        let sign = document.getElementById('signup')
+        sign.addEventListener('click',(e)=>{
+            e.preventDefault();
+            let fname= document.getElementById('fname').value
+            let lname= document.getElementById('lname').value
+            let email= document.getElementById('email').value
+            let pws= document.getElementById('password').value
+
+            window.sessionStorage.setItem("name",fname)
+            window.sessionStorage.setItem("lastname",lname)
+            window.sessionStorage.setItem("email",email)
+            window.sessionStorage.setItem("password",pws)
+
+            window.open("./index.html")
+        })
+    </script>
+</body>
+</html>

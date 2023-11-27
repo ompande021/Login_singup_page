@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body{
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: 700;
+            color: rgb(231, 235, 240);
+            background: rgb(63,94,251);
+            background: linear-gradient(90deg, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
+            overflow: hidden;
+            background-repeat: no-repeat;
+            margin: 0;
+        }
+        div{
+            height: 450px;
+            width: 350px;
+            box-shadow: 2px 4px 6px black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 20px;
+            font-weight: 440;
+        }
+        h2{
+            color: black;
+        }
+        a{
+            text-decoration: none;
+            color: black;
+            font-size: 15px;
+            font-weight: 550;
+        }
+        p{
+            font-size: 12px;
+        }
+        form{
+            height: 200px;
+            width: 350px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-direction: column;
+        }
+        #name,#password{
+            height: 30px;
+            width: 220px;
+            border-radius: 20px;
+            box-shadow: 1px 2px 2px black;
+            font-size: 15px;
+            background-color: whitesmoke;
+        }
+        button{
+            height: 30px;
+            width: 100px;
+            border-radius: 20px;
+            box-shadow: 1px 2px 2px black;
+            font-size: 15px;
+            background-color: rgb(251, 51, 91);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    
+        <div>
+            <h2>Login Form</h2>
+            <form action="">
+                <label for="name">Email ID</label>
+                <input type="text" id="name" placeholder="Username or EmailID">
+                <br>
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Password">
+                <br>
+                <button id="login">Login</button>
+            </form>
+            <p>Don't have account? <a href="./signup.html" target="_self">SIGNUP</a></p>
+        </div>
+    </section>
+
+    <script>
+        let log = document.getElementById('login')
+        log.addEventListener('click',(e)=>{
+            e.preventDefault();
+            let name= document.getElementById('name').value
+            let pws= document.getElementById('password').value
+
+            let temp=window.sessionStorage.getItem('email')
+            let temp1=window.sessionStorage.getItem('password')
+            if(name == temp  && pws == temp1)
+            {
+                window.open("./Home.html")
+            }
+            else
+            {
+                alert(`You enter wrong email ID or Password`);
+            }
+
+        })
+    </script>
+</body>
+</html>
